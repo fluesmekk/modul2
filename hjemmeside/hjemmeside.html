@@ -17,7 +17,7 @@
   
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
 
-    <img src="avatar.png" style="width:100%">
+    <img src="bilder/avatar.png" style="width:100%">
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
       <i></i>
       <p>Hjem</p>
@@ -28,7 +28,7 @@
     </a>
     <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
       <i></i>
-      <p>OM</p>
+      <p>Om</p>
     </a>
     <a href="oppgaver.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
       <i>Oppgaver</i>
@@ -61,16 +61,19 @@
     <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
       <h1 class="w3-xl"><span class="w3-hide-small"></span> Theodor Berg</h1>
       <p>Hobby musikk-produsent og junior fullstack.</p>
-      <img src="theodor.jpg" alt="boy" class="w3-image" width="250" height="600">
+      <img src="bilder/theodor.jpg" alt="boy" class="w3-image" width="250" height="600">
     </header>
 
 
     <div class="w3-padding-64 w3-center w3-text-grey" id="musikk">
       <h2 class="w3-text-light-grey w3-xlarge">Beats jeg har lagd</h2>
-      <select name="songs" id="songs" onchange="playSong(value)">
-        <option class="select" value="hyperPop">HyperPop</option>
-        <option class="select" value="lofi">Lofi</option>
+      <input type="range" oninput="volumeLevel = this.value" min="0" max="1" step="0.1"></input>
+      <button class="w3-black" onclick="playMusic()">Spill av</button><button class="w3-black" onclick="pauseMusic()">Pause</button>
+      <select class="w3-black" name="songs" id="songs" onchange="play(value)">
+        <option class="select" value="musikk/hyperPop.wav">HyperPop</option>
+        <option class="select" value="musikk/lofi.wav">Lofi</option>
       </select>
+      
       <div id="songDiv" class="musicPlayer">
         <hr style="width:100%" class="w3-opacity w3-center">
       </div>
@@ -82,7 +85,7 @@
         <hr style="width:200px" class="w3-opacity">
         <p>Hei, jeg er elev på Get academy som lærer meg programmering som en fullstack utvikler.</br>  
         Jeg har drevet med musikkprodukjson som en hobby i rundt 5 år.
-        </br>24 år og nysjerrig på programmering
+        </br>24 år og nysjerrig på programmering.</br> Håper på en karriere med givende backend.
         </p>
         <h3 class="w3-padding-16 w3-text-light-grey">Mine ferdigheter</h3>
         <p class="w3-wide">Musikkproduksjon</p>
@@ -130,9 +133,7 @@
           <!-- Grid for photos -->
           <div class="w3-row-padding" style="margin:0 -16px">
             <div class="w3-half">
-              <img src="128164745_168237008380114_97264557734521756_n.jpg" style="width:100%">
-              <!-- <img src="/w3images/rocks.jpg" style="width:100%">
-        <img src="/w3images/sailboat.jpg" style="width:100%"> -->
+              <img src="bilder/128164745_168237008380114_97264557734521756_n.jpg" style="width:100%">
             </div>
 
             <div class="w3-half">

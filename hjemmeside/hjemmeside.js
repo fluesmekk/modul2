@@ -6,22 +6,17 @@
 //view
 
 //model 
+var audio;
+var volumeLevel = 0.5;
 
+function play(value) {
+    audio = new Audio(`${value}`);
+}
+function playMusic() {
+    audio.volume = volumeLevel;
+    audio.play();
+}
 
-function playSong(value) {
-    var songDiv = document.getElementById('songDiv')
-    if (value == 'hyperPop') {
-        songDiv.innerHTML = `
-        <audio id="myAudio" class="audio" controls>
-        <source src="musikk/HyperPop.wav" type="audio/wav">
-        </audio>
-        `;
-
-    } else if (value == 'lofi') {
-        songDiv.innerHTML = `
-        <audio id="myAudio"  class="audio"controls>
-        <source src="musikk/lofi.wav" type="audio/wav">
-        </audio>
-        `;
-    }
+function pauseMusic() {
+    audio.pause();
 }
