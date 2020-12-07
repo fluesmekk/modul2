@@ -1,25 +1,6 @@
 
 
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
 
 
 //view
@@ -40,14 +21,28 @@ function selectTasks(parameter) {
     }
 }
 
-function playSong (parameter) {
-    if (parameter == 1) {
-        document.getElementById('songDiv').innerHTML = `
-        <audio controls>
-        <source src="horse.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+function playSong(value) {
+    var songDiv = document.getElementById('songDiv')
+    if (value == 'hyperPop') {
+        songDiv.innerHTML = `
+        <audio id="myAudio" class="audio" controls>
+        <source src="HyperPop.wav" type="audio/wav">
         </audio>
-        
-        `
+        `;
+
+    } else if (value == 'lofi') {
+        songDiv.innerHTML = `
+        <audio id="myAudio"  class="audio"controls>
+        <source src="lofi.wav" type="audio/wav">
+        </audio>
+        `;
+    }
+}
+
+function reDirect(value) {
+    if (value == 'oblig1') {
+        window.open("https://github.com/fluesmekk/oblig1");
+    } else if (value == 'oblig2') {
+        window.open("https://github.com/fluesmekk/oblig2/")
     }
 }
