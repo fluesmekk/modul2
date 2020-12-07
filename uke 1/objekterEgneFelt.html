@@ -51,9 +51,9 @@ Oppgaver
 <script>
     // Model
     var tasks = [
-        { description: 'Handle til middag', isDone: true, personName: 'Lars', deadline: '2020-11-27', dateDone: '' },
-        { description: 'Lage middag', isDone: false, personName: 'Herman', deadline: '2020-11-27', dateDone: '' },
-        { description: 'Spise middag', isDone: false, personName: 'Sigrid', deadline: '2020-11-27', dateDone: '' },
+        { description: 'Handle til middag', isDone: false, personName: 'Lars', deadline: '27.11.2020', dateDone: '' },
+        { description: 'Lage middag', isDone: false, personName: 'Herman', deadline: '27.11.2020', dateDone: '' },
+        { description: 'Spise middag', isDone: false, personName: 'Sigrid', deadline: '27.11.2020', dateDone: '' },
     ];
 
     // Controller
@@ -62,13 +62,21 @@ Oppgaver
     var taskDescriptionInput3 = document.getElementById('taskDeadline');
 
     function addTask() {
+        var deadlineDate = taskDescriptionInput3.value;
+        var dd = deadlineDate.substring(8, 10);
+        var mm = deadlineDate.substring(5, 7); 
+        var yyyy = deadlineDate.substring(0, 4);
+        deadlineDate = dd + '.' + mm + '.' + yyyy;
+
         tasks.push({
             description: taskDescriptionInput.value,
             isDone: false,
             personName: taskDescriptionInput2.value,
-            deadline: taskDescriptionInput3.value,
+            deadline: deadlineDate,
         });
         taskDescriptionInput.value = '';
+        taskDescriptionInput2.value = '';
+        taskDescriptionInput3.value = '';
         show();
     }
 
@@ -123,9 +131,13 @@ Oppgaver
     }
 
     function changeIsDone(checkbox, index) {
-        tasks[index].isDone = checkbox.checked; 
         var d = new Date();
-        tasks[index].dateDone = d.toLocaleDateString();
+        tasks[index].isDone = checkbox.checked;
+        if (tasks[index].isDone == true); {
+            
+            tasks[index].dateDone = d.toLocaleDateString();
+        }
+        
         show();
     }
 
