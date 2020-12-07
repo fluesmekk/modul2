@@ -19,28 +19,27 @@
 
     <img src="avatar.png" style="width:100%">
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-      <i class="fa fa-home w3-xxlarge"></i>
-      <p>HJEM</p>
+      <i></i>
+      <p>Hjem</p>
     </a>
     <a href="#musikk" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <i class="fa fa-envelope w3-xlarge"></i>
-      <p>MUSIKK</p>
+      <i></i>
+      <p>Musikk</p>
     </a>
     <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <i class="fa fa-user w3-xlarge"></i>
+      <i></i>
       <p>OM</p>
     </a>
-    <a href="#oppgaver" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <A HREF="oppgaver.html">Oppgaver</A>
-      <i class="fa fa-paste w3-xlarge"></i>
+    <a href="oppgaver.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+      <i>Oppgaver</i>
     </a>
     <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <i class="fa fa-eye w3-xlarge"></i>
-      <p>BILDER</p>
+      <i></i>
+      <p>Bilder</p>
     </a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <i class="fa fa-envelope w3-xlarge"></i>
-      <p>KONTAKT</p>
+      <i></i>
+      <p>Kontakt</p>
     </a>
     
   </nav>
@@ -60,14 +59,14 @@
   <div class="w3-padding-large" id="main">
     <!-- Header/Home -->
     <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-      <h1 class="w3-jumbo"><span class="w3-hide-small"></span> Theodor Berg</h1>
+      <h1 class="w3-xl"><span class="w3-hide-small"></span> Theodor Berg</h1>
       <p>Hobby musikk-produsent og junior fullstack.</p>
       <img src="theodor.jpg" alt="boy" class="w3-image" width="250" height="600">
     </header>
 
 
     <div class="w3-padding-64 w3-center w3-text-grey" id="musikk">
-      <h2 class="w3-text-light-grey">Beats jeg har lagd</h2>
+      <h2 class="w3-text-light-grey w3-xlarge">Beats jeg har lagd</h2>
       <select name="songs" id="songs" onchange="playSong(value)">
         <option class="select" value="hyperPop">HyperPop</option>
         <option class="select" value="lofi">Lofi</option>
@@ -83,22 +82,23 @@
         <hr style="width:200px" class="w3-opacity">
         <p>Hei, jeg er elev på Get academy som lærer meg programmering som en fullstack utvikler.</br>  
         Jeg har drevet med musikkprodukjson som en hobby i rundt 5 år.
+        </br>24 år og nysjerrig på programmering
         </p>
         <h3 class="w3-padding-16 w3-text-light-grey">Mine ferdigheter</h3>
         <p class="w3-wide">Musikkproduksjon</p>
-        <div class="w3-white">
+        <div style="width: 200px"class="w3-white">
           <div class="w3-dark-grey" style="height:28px;width:95%"></div>
         </div>
         <p class="w3-wide">Backend</p>
-        <div class="w3-white">
+        <div style="width: 200px" class="w3-white">
           <div class="w3-dark-grey" style="height:28px;width:85%"></div>
         </div>
         <p class="w3-wide">Web Design</p>
-        <div class="w3-white">
+        <div style="width: 200px" class="w3-white">
           <div class="w3-dark-grey" style="height:28px;width:82%"></div>
         </div>
         <p class="w3-wide">Photoshop</p>
-        <div class="w3-white">
+        <div style="width: 200px" class="w3-white">
           <div class="w3-dark-grey" style="height:28px;width:40%"></div>
         </div><br>
 
@@ -118,11 +118,8 @@
 
           <div class="w3-padding-64 w3-content" id="oppgaver">
             <h2 class="w3-text-light-grey">OPPGAVER</h2>
+            <A HREF="oppgaver.html">Oppgaver</A>
             <hr style="width:200px" class="w3-opacity">
-            <select class="select" onchange="reDirect(value)">
-              <option class="select" value="oblig1">Oblig 1</option>
-              <option class="select" value="oblig2">Oblig 2</option>
-            </select>
         </div>
 
         <!-- Portfolio Section -->
