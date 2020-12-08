@@ -28,3 +28,53 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 @media screen and (max-width: 480px) {
     #beat {right: 40px;}
 }
+body {
+    background-color: black;
+}
+
+table, th, td, tr, hr{
+    
+    border-collapse: collapse;
+}
+
+
+
+tr:hover {
+    border: 2px solid palegoldenrod;
+    border-radius: 5px;
+}
+
+
+th {
+    margin: auto;
+    min-width: 130px;
+    font-weight: 300;
+    background-color: lightcoral;
+}
+td {
+    text-align: center;
+    background-color: lightcyan;
+    width: 120px;
+}
+
+.player {
+    position: fixed;
+    left: 5%;
+    bottom: 5%;
+    border: 2px solid black;
+    
+}
+#nowPlaying {
+    position: fixed;
+    left: 5%;
+    bottom: 10%;
+    border: 2px solid black;
+}
+#play {
+    background-color: black;
+    color: whitesmoke;
+}
+#pause {
+    background-color: black;
+    color: whitesmoke;
+}

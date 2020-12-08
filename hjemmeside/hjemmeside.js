@@ -20,3 +20,4 @@ function playMusic() {
 function pauseMusic() {
     audio.pause();
 }
+

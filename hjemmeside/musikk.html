@@ -16,7 +16,7 @@
         <style>
             * {
                 font-family: 'Playfair Display', serif;
-                font-size: 15px;
+                font-size: 10px;
 
             }
 
@@ -25,21 +25,20 @@
             }
             
             table, th, td, tr {
-                
+                border: 1px solid black;
                 border-collapse: collapse;
             }
 
 
 
-            tr:hover {
+            .tablerow:hover {
                 border: 2px solid palegoldenrod;
-                border-radius: 5px;
             }
 
 
             th {
-                margin: auto;
-                min-width: 130px;
+                
+                min-width: 40px;
                 font-weight: 300;
                 background-color: lightcoral;
             }
@@ -51,14 +50,14 @@
 
             .player {
                 position: fixed;
-                left: 5%;
+
                 bottom: 5%;
                 border: 2px solid black;
                 
             }
             #nowPlaying {
                 position: fixed;
-                left: 5%;
+
                 bottom: 10%;
                 border: 2px solid black;
             }
@@ -81,8 +80,12 @@
                 selectedPlayTime: '',
                 selectedGenre: '',
                 songs: [
-                    {songTitle: 'lofi', artist: 'FREMTIDEN', playTime: '1.12', genre: 'lofi',},
-                    {songTitle: 'HyperPop', artist: 'FREMTIDEN', playTime: '1.40', genre: 'HyperPop',},
+                    {songTitle: 'lofi', artist: 'fremtiden', playTime: '1.12', genre: 'lofi',},
+                    {songTitle: 'HyperPop', artist: 'fremtiden', playTime: '1.40', genre: 'HyperPop',},
+                    {songTitle: 'cyberpunk', artist: 'fremtiden', playTime: '0.31', genre: 'cyberpunk'},
+                    {songTitle: 'pop', artist: 'fremtiden', playTime: '3.04', genre: 'future-pop'},
+                    {songTitle: 'GetEm', artist: 'fremtiden', playTime: '1.53', genre: 'DnB'},
+                    {songTitle: 'Come Back', artist: 'fremtiden', playTime: '3.03', genre: 'x'},
                 ]
             }
 
@@ -93,8 +96,7 @@
             function updateView() {
                 let html = '';
             for (let i = 0; i < musicObject.songs.length; i++) {
-                html += `<tr id="tableRow${i}" class="">
-
+                html += `<tr id="tableRow${i}" class="tablerow">
                             <td onclick="selectSong(${[i]})">${musicObject.songs[i].songTitle}</td>
                             <td onclick="selectSong(${[i]})">${musicObject.songs[i].artist}</td>
                             <td onclick="selectSong(${[i]})">${musicObject.songs[i].playTime}</td>
@@ -119,14 +121,15 @@
 
 
             <table class="player">
-                <div id="nowPlaying"><button id="play" onclick="playSong()">Play</button><button id="pause" onclick="pauseSong()">Pause</button><input oninput="musicObject.volumeLevel = this.value" type="range" min="0.1" max="1" step="0.1"></div>
-                <tr style="min-width: 200px">
+                <div id="nowPlaying"><button id="play" onclick="playSong()">Play</button><button id="pause" onclick="pauseSong()">Pause</button><input oninput="musicObject.volumeLevel = this.value; playSong()" type="range" min="0.1" max="1" step="0.1"></div>
+                <tr id="tablerow">
                  <td>${musicObject.selectedSong || 	'x'}</td>
                  <td>${musicObject.selectedArtist || 	'x'}</td>
                  <td>${musicObject.selectedPlayTime || 	'x'}</td>
                  <td>${musicObject.selectedGenre || 	'x'}</td>
                 </tr>
             </table>
+            
                 `;
             }
 
