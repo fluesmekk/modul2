@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id='app'></div>
+        <style>
+            * {
+                font-family: 'Playfair Display', serif;
+                font-size: 15px;
+
+            }
+
+            body {
+                background-color: black;
+            }
+            
+            table, th, td, tr {
+                
+                border-collapse: collapse;
+            }
+
+
+
+            tr:hover {
+                border: 2px solid palegoldenrod;
+                border-radius: 5px;
+            }
+
+
+            th {
+                margin: auto;
+                min-width: 130px;
+                font-weight: 300;
+                background-color: lightcoral;
+            }
+            td {
+                text-align: center;
+                background-color: lightcyan;
+                width: 120px;
+            }
+
+            .player {
+                position: fixed;
+                left: 5%;
+                bottom: 5%;
+                border: 2px solid black;
+                
+            }
+            #nowPlaying {
+                position: fixed;
+                left: 5%;
+                bottom: 10%;
+                border: 2px solid black;
+            }
+            #play {
+                background-color: black;
+                color: whitesmoke;
+            }
+            #pause {
+                background-color: black;
+                color: whitesmoke;
+            }
+
+        </style>
+        <script>
+            //model
+            const musicObject = {
+                volumeLevel: '0.5',
+                selectedSong: '',
+                selectedArtist: '',
+                selectedPlayTime: '',
+                selectedGenre: '',
+                songs: [
+                    {songTitle: 'lofi', artist: 'FREMTIDEN', playTime: '1.12', genre: 'lofi',},
+                    {songTitle: 'HyperPop', artist: 'FREMTIDEN', playTime: '1.40', genre: 'HyperPop',},
+                ]
+            }
+
+            
+
+            //view
+            updateView()
+            function updateView() {
+                let html = '';
+            for (let i = 0; i < musicObject.songs.length; i++) {
+                html += `<tr id="tableRow${i}" class="">
+
+                            <td onclick="selectSong(${[i]})">${musicObject.songs[i].songTitle}</td>
+                            <td onclick="selectSong(${[i]})">${musicObject.songs[i].artist}</td>
+                            <td onclick="selectSong(${[i]})">${musicObject.songs[i].playTime}</td>
+                            <td onclick="selectSong(${[i]})">${musicObject.songs[i].genre}</td>
+                        </tr>`
+            }
+            
+            
+
+
+            document.getElementById('app').innerHTML = `
+            <table>
+                <tr>
+                    <th>Sang</th>    
+                    <th>Artist</th>
+                    <th>Spilletid</th>
+                    <th>Sjanger</th>      
+                </tr>
+                ${html}
+            </table>
+
+
+
+            <table class="player">
+                <div id="nowPlaying"><button id="play" onclick="playSong()">Play</button><button id="pause" onclick="pauseSong()">Pause</button><input oninput="musicObject.volumeLevel = this.value" type="range" min="0.1" max="1" step="0.1"></div>
+                <tr style="min-width: 200px">
+                 <td>${musicObject.selectedSong || 	'x'}</td>
+                 <td>${musicObject.selectedArtist || 	'x'}</td>
+                 <td>${musicObject.selectedPlayTime || 	'x'}</td>
+                 <td>${musicObject.selectedGenre || 	'x'}</td>
+                </tr>
+            </table>
+                `;
+            }
+
+            var audio;
+            function selectSong(id) {
+                
+                musicObject.selectedSong = musicObject.songs[id].songTitle;
+                musicObject.selectedArtist = musicObject.songs[id].artist;
+                musicObject.selectedPlayTime = musicObject.songs[id].playTime;
+                musicObject.selectedGenre = musicObject.songs[id].genre;
+                audio = new Audio(`musikk/${musicObject.selectedSong}.wav`)
+                updateView();
+            }
+            
+            function playSong() {
+                audio.volume = musicObject.volumeLevel;
+                audio.play();
+            }
+            function pauseSong() {
+                audio.pause();
+            }
+        </script>
+    </body>
+</html>

@@ -22,7 +22,7 @@
       <i></i>
       <p>Hjem</p>
     </a>
-    <a href="#musikk" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <a href="musikk.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
       <i></i>
       <p>Musikk</p>
     </a>
@@ -66,7 +66,7 @@
 
 
     <div class="w3-padding-64 w3-center w3-text-grey" id="musikk">
-      <h2 class="w3-text-light-grey w3-xlarge">Beats jeg har lagd</h2>
+      <h2 id="beat" class="w3-text-light-grey w3-small">Beats jeg har lagd</h2>
       <input type="range" oninput="volumeLevel = this.value" min="0" max="1" step="0.1"></input>
       <button class="w3-black" onclick="playMusic()">Spill av</button><button class="w3-black" onclick="pauseMusic()">Pause</button>
       <select class="w3-black" name="songs" id="songs" onchange="play(value)">
@@ -129,14 +129,11 @@
         <div class="w3-padding-64 w3-content" id="photos">
           <h2 class="w3-text-light-grey">Mine Bilder</h2>
           <hr style="width:200px" class="w3-opacity">
-
+        
           <!-- Grid for photos -->
           <div class="w3-row-padding" style="margin:0 -16px">
             <div class="w3-half">
-              <img src="bilder/128164745_168237008380114_97264557734521756_n.jpg" style="width:100%">
-            </div>
-
-            <div class="w3-half">
+              <img src="bilder/128164745_168237008380114_97264557734521756_n.jpg" style="width:70%">
             </div>
           </div>
         </div>
@@ -158,7 +155,6 @@
             </p>
           </div><br>
           <!-- <p>Let's get in touch. Send me a message:</p> -->
-          <div id="app" class="oppgaver"></div>
 
 
 
@@ -169,10 +165,8 @@
 
           <!-- Footer -->
           <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-            <i class="fa fa-snapchat w3-hover-opacity"></i>
-            <i class="fa fa-linkedin w3-hover-opacity"></i>
-            <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
-                class="w3-hover-text-green">w3.css</a></p>
+            <i class="fa fa-snapchat w3-hover-opacity" title="theodorberg">theodorberg</i></br>
+            <i class="fa fa-linkedin w3-hover-opacity"><a href="https://www.linkedin.com/in/theodor-berg-92b5a7201/">Theodor Berg</a></i>
             <!-- End footer -->
           </footer>
 

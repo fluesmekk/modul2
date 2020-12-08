@@ -24,22 +24,22 @@ function updateView() {
         for (let i = 0; i < model.people.length; i++) {
             if (model.people[i].editMode == true) {
                 html += `<tr>
-                        <td><input size="6" id="modelName${i}" value="${model.people[i].name}"></input></td>
-                        <td><input size="2" id="modelAge${i}" value="${model.people[i].age}"></input></td>
-                        <td><input size="4" id="modelHobby${i}" value="${model.people[i].hobby}"></input></td>
-                        <td><input id="modelBirthday${i}" type="date" onchange="changeDate()" value="${model.people[i].birthday}"></input></td>
-                        <td><button onclick="removePeople(${[i]})">x</button></td>
-                        <td><button onclick="saveChanges(${[i]})">Lagre</button></td>
-                </tr>` 
+                            <td><input size="6" id="modelName${i}" value="${model.people[i].name}"></input></td>
+                            <td><input size="2" id="modelAge${i}" value="${model.people[i].age}"></input></td>
+                            <td><input size="4" id="modelHobby${i}" value="${model.people[i].hobby}"></input></td>
+                            <td><input id="modelBirthday${i}" type="date" onchange="changeDate()" value="${model.people[i].birthday}"></input></td>
+                            <td><button onclick="removePeople(${[i]})">x</button></td>
+                            <td><button onclick="saveChanges(${[i]})">Lagre</button></td>
+                        </tr>` 
             } else {
                 html += `<tr>
-                        <td>${model.people[i].name}</td>
-                        <td>${model.people[i].age}</td>
-                        <td>${model.people[i].hobby}</td>
-                        <td>${model.people[i].birthday}</td>
-                        <td><button onclick="removePeople(${[i]})">x</button></td>
-                        <td><button onclick="editMode(${i})">Rediger</button></td>
-                </tr>`
+                            <td>${model.people[i].name}</td>
+                            <td>${model.people[i].age}</td>
+                            <td>${model.people[i].hobby}</td>
+                            <td>${model.people[i].birthday}</td>
+                            <td><button onclick="removePeople(${[i]})">x</button></td>
+                            <td><button onclick="editMode(${i})">Rediger</button></td>
+                        </tr>`
             }
                 
         }

@@ -19,3 +19,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .select {
     color: black;
 }
+
+#beat {
+    position: relative;
+    right: 117px;
+}
+
+@media screen and (max-width: 480px) {
+    #beat {right: 40px;}
+}
