@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="labyrinth.css">
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        //model
+        var mazeModel = {
+            size: 2,
+            rows: [
+                [
+                    { isHigh: false, isWide: false, isOpen: false },
+                    { isHigh: false, isWide: true, isOpen: false },
+                    { isHigh: false, isWide: false, isOpen: false },
+                    { isHigh: false, isWide: true, isOpen: false },
+                    { isHigh: false, isWide: false, isOpen: false },
+                ],
+                [
+                    { isHigh: true, isWide: false, isOpen: false },
+                    { isHigh: true, isWide: true },
+                    { isHigh: true, isWide: false, isOpen: false },
+                    { isHigh: true, isWide: true },
+                    { isHigh: true, isWide: false, isOpen: false },
+                ],
+                [
+                    { isHigh: false, isWide: false, isOpen: false },
+                    { isHigh: false, isWide: true, isOpen: false },
+                    { isHigh: false, isWide: false, isOpen: false },
+                    { isHigh: false, isWide: true, isOpen: false },
+                    { isHigh: false, isWide: false, isOpen: false },
+                ],
+                [
+                    { isHigh: true, isWide: false, isOpen: false },
+                    { isHigh: true, isWide: true },
+                    { isHigh: true, isWide: false, isOpen: false },
+                    { isHigh: true, isWide: true },
+                    { isHigh: true, isWide: false, isOpen: false },
+                ],
+                [
+                    { isHigh: false, isWide: false, isOpen: false },
+                    { isHigh: false, isWide: true, isOpen: false },
+                    { isHigh: false, isWide: false, isOpen: false },
+                    { isHigh: false, isWide: true, isOpen: false },
+                    { isHigh: false, isWide: false, isOpen: false },
+                ],
+            ]
+        };
+
+
+
+        updateView()
+        function updateView() {
+        document.getElementById('app').innerHTML `
+        <table>
+        <tr>
+        <td>123</td>
+        </tr>
+        
+        </table>
+        `;
+        
+
+        }
+
+    </script>
+</body>
+
+</html>
