@@ -61,19 +61,84 @@
 
         updateView()
         function updateView() {
-        document.getElementById('app').innerHTML `
+        document.getElementById('app').innerHTML = `
         <table>
-        <tr>
-        <td>123</td>
-        </tr>
-        
+            ${mazeModel.rows.map((row, rowIndex) => `
+                <tr>
+                    ${row.map((col, colIndex) => `
+                        <td onclick="toggle(${rowIndex}, ${colIndex})" class="${getCssClass(col)}"></td>
+                        `).join('')}    
+                </tr>
+                
+                `).join('')}
         </table>
         `;
         
 
         }
 
+
+
+    function getCssClass (square) {
+        if (square.isHigh && square.isWide) return 'room';
+        const highLow = square.isHigh ? 'high ' : 'low ';
+        const wideSmall = square.isWide ? 'wide ' : 'small ';
+        const squareIsOpen = square.isOpen ? 'noWall ' : 'wall ';
+        return highLow + wideSmall + squareIsOpen;
+     }
+
+
+
+    
+    function randomValue () {
+        return Math.floor(Math.random() * 2);
+    }
+
+
+    function initModel(size) {
+        mazeModel.rows = [];
+        for (let rowIndex = 0; rowIndex < size; rowIndex++) {
+            mazeModel.rows.push(createRow(size, false));
+            mazeModel.rows.push(createRow(size, true));
+    }
+    mazeModel.rows.push(createRow(size, false));
+
+    closeRow(0);
+    closeRow(mazeModel.rows.length - 1);
+}
+
+
+    function closeRow(index) {
+        const row = mazeModel.rows[index];
+        for (let cell of row) {
+            cell.isOpen = false;
+        }
+    }
+
+    function closeColumn() {
+        for (let row of mazeModel.rows) {
+            row[index].isOpen = false;
+        }
+    }
+
+    function createRow(size, isHigh) {
+        const row = [];
+        for (let colIndex = 0; colIndex < size; colIndex++) {
+            row.push(createCell(isHigh, false));
+            row.push(createCell(isHigh, true));
+        }
+        row.push(createCell(isHigh, false));
+        return row;
+    }
+
+    function createCell(isHigh, isWide) {
+        if (isHigh === isWide) return {isHigh, isWide };
+        const isOpen = Math.random() < 0.5;
+        return { isHigh, isWide, isOpen};
+    }
+
     </script>
+    
 </body>
 
 </html>

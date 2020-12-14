@@ -24,7 +24,6 @@
                 // arrange
                 model.inputs = {
                     createPoll: {
-                        isOpen: true,
                         pollId: null,
                         question: 'Hvem er den tøffeste læreren ved GET Academy?',
                         options: ['Geir', 'Eskil', 'Terje'],
@@ -44,16 +43,15 @@
                     options: ['Geir', 'Eskil', 'Terje'],
                     votes: {},
                 };
-                
                 assert.equal(model.polls.length, 1);
                 assert.deepEqual(model.polls[0], expectedPollObj);
                 assert.equal(model.inputs.createPoll.pollId !== null, true);
 
             });
 
-            // QUnit.test('update poll', function(assert) {
-            //     assert.equal(1, 2);
-            // });
+            QUnit.test('update poll', function(assert) {
+                assert.equal(1, 2);
+            });
         });
     </script>
 </body>

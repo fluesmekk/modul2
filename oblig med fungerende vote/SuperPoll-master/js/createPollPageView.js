@@ -23,7 +23,6 @@ function updateViewCreateVotePage() {
             ${checked} 
         />
         La brukere legge til egne alternativer
-        </br>
         <br/>
 
         <h4>Alternativer</h4>
