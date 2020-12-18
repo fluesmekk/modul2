@@ -1,12 +1,17 @@
 const model = {
     tempIsOpen: '',
     isOpenVarOninput: '',
+    questionVarOnInput: '',
+    questionTemporary: '',
     saveState: '',
     drawHtmlOptionsLower: '',
     drawHtmlOptionsUpper: '',
+
     oninputs: {
 
     },
+
+    
     options: {
         optionsTemporary : '',
         rowOptionsTemporary : '',
@@ -17,7 +22,7 @@ const model = {
     app: {
         currentPoll: 1,
         loggedInUser: 'per',
-        currentPage: 'createPoll',
+        currentPage: 'createVote',
         currentPoll: '',
     },
 

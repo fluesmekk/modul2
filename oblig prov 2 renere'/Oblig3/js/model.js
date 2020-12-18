@@ -1,24 +1,8 @@
 const model = {
-    tempIsOpen: '',
-    isOpenVarOninput: '',
-    saveState: '',
-    drawHtmlOptionsLower: '',
-    drawHtmlOptionsUpper: '',
-    oninputs: {
-
-    },
-    options: {
-        optionsTemporary : '',
-        rowOptionsTemporary : '',
-        lowerRowOptionsHtml : '',
-        upperRowOptionsHtml : '',
-    },
-    
     app: {
         currentPoll: 1,
         loggedInUser: 'per',
         currentPage: 'createPoll',
-        currentPoll: '',
     },
 
     users: [
@@ -27,20 +11,36 @@ const model = {
         { username: 'espen', name: 'Espen', password: '123', isAdmin: true },
     ],
 
+    currentPollView: {
+        thUpperRow: '',
+        tdLowerRow: '',
+    },
+
+    savedWhenEdit: {
+        isOpen: '',
+        question: '',
+        options: [],
+    },
+
+    savedFromInput: {
+        isOpen: '',
+        question: '',
+        options: [],
+    },
+
+
     inputs: {
+        tempPollId: 0,
         createPoll: {
             pollId: null,
             newAlternative: '',
             question: 'Hvem er den tøffeste læreren ved GET Academy?',
             options: ['Geir', 'Eskil', 'Terje'],
             usersCanAddAlternatives: true,
-            isOpen: true,
         },
     },
 
     polls: [],
-
-    votes: [],
 };
 
 /*

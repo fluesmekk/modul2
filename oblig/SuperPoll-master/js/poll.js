@@ -12,6 +12,8 @@ function updateViewPoll() {
 
 
 function createTdForOptions(index) {
+    model.options.lowerRowOptions = '';
+    model.options.upperRowOptions = '';
     for (let i = 0; i < model.polls[index].options.length; i++) {
         model.options.lowerRowOptions += `<td>${model.polls[index].options[i]}</td>`;
         model.options.upperRowOptions += `<th>Svaralternativ ${i + 1}</th>`
@@ -79,7 +81,7 @@ function editMode(index) {
             
             <tr>
                 <td class="center"><input oninput="model.isOpenVarOninput = this.value" size="2" value="${model.polls[index].isOpen}"></input></td>
-                <td><textarea id="question" placeholder="${model.polls[index].question}"></textarea></td>
+                <td><textarea oninput="model.questionVarOnInput = this.value" id="question" placeholder="${model.polls[index].question}"></textarea></td>
                 ${model.drawHtmlOptionsLower}
                 <td><button onclick="save(${index})">Lagre</button></td>
             </tr>
@@ -93,16 +95,20 @@ function save(index) {
     
     if (model.isOpenVarOninput == '') {
         model.polls[index].isOpen = model.tempIsOpen;
-
     } else if (model.isOpenVarOninput == 'true' || model.isOpenVarOninput == 'false') {
         model.polls[index].isOpen = model.isOpenVarOninput;
+    }
+
+    if (model.questionVarOnInput == '') {
+        model.poll[index].question = model.questionTemporary;
+    } else if (model.questionVarOnInput != '') {
+        model.polls[index].question = model.questionVarOnInput
     }
 
     for (let i = 0; i < model.saveState; i++) {
 
         if (model.oninputs[i] == '') {
             model.polls[index].question[i] = model.savedOptions[i];
-
         } else if (model.oninputs[i] != '') {
             document.getElementById('app').innerHTML = ``;
             model.polls[index].options[i] = model.oninputs[i];
